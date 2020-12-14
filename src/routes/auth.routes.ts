@@ -12,4 +12,6 @@ router.post(
   message
 );
 
+router.post("/auth", passport.authenticate("jwt", { session: false }));
+
 export default router;
