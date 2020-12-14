@@ -10,5 +10,7 @@ const router = express_1.Router();
 router.post("/signup", user_controller_1.signUp);
 router.post("/signin", user_controller_1.signIn);
 router.post("/message", passport_1.default.authenticate("jwt", { session: false }), user_controller_1.message);
-router.post("/auth", passport_1.default.authenticate("jwt", { session: false }));
+router.post("/auth", passport_1.default.authenticate("jwt", { session: false }), (req, res) => {
+    return res.status(400).json({ auth: true });
+});
 exports.default = router;
