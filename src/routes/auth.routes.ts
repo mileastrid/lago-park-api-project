@@ -17,7 +17,7 @@ router.post(
   "/auth",
   passport.authenticate("jwt", { session: false }),
   (req: Request, res: Response) => {
-    return res.status(400).json({ auth: true });
+    return res.status(201).json({ auth: true });
   }
 );
 
