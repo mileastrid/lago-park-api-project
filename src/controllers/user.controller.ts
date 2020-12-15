@@ -24,7 +24,7 @@ export const signUp = async (req: Request, res: Response) => {
 
   await newUser.save();
 
-  return res.status(200).json({ token: createToken(user) });
+  return res.status(200).json({ msg: 'ok' });
 };
 
 export const signIn = async (req: Request, res: Response) => {
